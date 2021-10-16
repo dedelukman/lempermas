@@ -1,7 +1,9 @@
 <main class="flex flex-col items-center flex-1 px-4 pt-6 sm:justify-center">
     <div>
         <a href="/">
-            <x-application-logo class="w-20 h-20" />
+            <!-- <x-application-logo class="w-20 h-20" /> -->
+            <p style="font-weight: bold;  font-size: 50px;  font-style: italic; color: green;">Lempermas</p>
+            
         </a>
     </div>
 

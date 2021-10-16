@@ -22,7 +22,7 @@
         <x-dropdown align="right" width="48">
             <x-slot name="trigger">
                 <button
-                    class="flex items-center p-2 text-sm font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200">
+                    class="flex items-center p-2 text-sm font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none focus:ring focus:ring-green-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200">
                     <div>{{ Auth::user()->name }}</div>
 
                     <div class="ml-1">
@@ -61,8 +61,9 @@
     </x-button>
 
     <a href="{{ route('dashboard') }}">
-        <x-application-logo aria-hidden="true" class="w-10 h-10" />
-        <span class="sr-only">K UI</span>
+        <!-- <x-application-logo aria-hidden="true" class="w-10 h-10" /> -->
+        <p style="font-weight: bold;  font-size: 20px;  font-style: italic; color: green;">Lempermas</p>
+        <span class="sr-only">Lempermas</span>
     </a>
 
     <x-button type="button" iconOnly variant="secondary" srText="Open main menu"
