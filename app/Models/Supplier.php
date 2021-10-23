@@ -22,4 +22,9 @@ class Supplier extends Model
     {
         return $this->hasMany(Product::class, 'supplier_id');
     }
+
+    public function consolidation()
+    {
+        return $this->hasMany(Consolidation::class, 'supplier_id');
+    }
 }
