@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('description')->nullable();
             $table->decimal('price')->default(0);
             $table->decimal('price_discount')->default(0);
-            $table->decimal('discout')->default(0);
+            $table->decimal('discount')->default(0);
             $table->decimal('discount_value')->default(0);
             $table->integer('stock_start')->default(0);
             $table->integer('purchase')->default(0);

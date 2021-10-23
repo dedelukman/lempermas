@@ -26,7 +26,7 @@ class CreateConsolidationDetailsTable extends Migration
             $table->decimal('discount_value')->default(0);           
             $table->decimal('total')->default(0);
             $table->timestamps();
-            $table->unique(["sale_id", "product_id"], 'sale_product_unique');
+            $table->unique(["consolidation_id", "product_id"], 'consolidation_product_unique');
             
         });
     }

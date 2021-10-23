@@ -41,9 +41,6 @@ class SupplierSeeder extends Seeder
             'name' => 'Teh Iip',           
         ]);
         \App\Models\Supplier::create([            
-            'name' => 'Teh Pipih',           
-        ]);
-        \App\Models\Supplier::create([            
             'name' => 'Teh Nur',           
         ]);
         \App\Models\Supplier::create([            
