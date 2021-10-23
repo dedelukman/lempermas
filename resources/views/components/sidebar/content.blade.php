@@ -6,18 +6,7 @@
         </x-slot>
     </x-sidebar.link>
 
-    <x-sidebar.dropdown title="Master" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
-        <x-slot name="icon">
-            <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-        </x-slot>
-
-        <x-sidebar.sublink title="Pemasok" href="{{ route('buttons.text') }}"
-            :active="request()->routeIs('buttons.text')" />
-        <x-sidebar.sublink title="Kategori" href="{{ route('buttons.icon') }}"
-            :active="request()->routeIs('buttons.icon')" />
-        <x-sidebar.sublink title="Produk" href="{{ route('buttons.text-icon') }}"
-            :active="request()->routeIs('buttons.text-icon')" />
-    </x-sidebar.dropdown>
+   
 
     <x-sidebar.dropdown title="Penerimaan" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
@@ -52,6 +41,19 @@
             :active="request()->routeIs('buttons.text')" />
         
        
+    </x-sidebar.dropdown>
+
+    <x-sidebar.dropdown title="Master" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
+        <x-slot name="icon">
+            <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+
+        <x-sidebar.sublink title="Produsen" href="{{ route('buttons.text') }}"
+            :active="request()->routeIs('buttons.text')" />
+        <x-sidebar.sublink title="Kategori" href="{{ route('buttons.icon') }}"
+            :active="request()->routeIs('buttons.icon')" />
+        <x-sidebar.sublink title="Produk" href="{{ route('buttons.text-icon') }}"
+            :active="request()->routeIs('buttons.text-icon')" />
     </x-sidebar.dropdown>
 
     

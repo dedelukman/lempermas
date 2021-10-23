@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="/lemper-logo.ico"/>
 
-    <title>{{ config('app.name', 'K UI') }}</title>
+    <title>{{ config('app.name', 'Lempermas') }}</title>
 
     <!-- Fonts -->
     <link

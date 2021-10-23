@@ -11,14 +11,14 @@
             <div class="grid gap-6">
                 <!-- Email Address -->
                 <div class="space-y-2">
-                    <x-label for="email" :value="__('Email')" />
+                    <x-label for="name" :value="__('Username')" />
 
                     <x-input-with-icon-wrapper>
                         <x-slot name="icon">
-                            <x-heroicon-o-mail aria-hidden="true" class="w-5 h-5" />
+                            <x-heroicon-o-user aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="email" class="block w-full" type="email" name="email"
-                            :value="old('email')" placeholder="{{ __('Email') }}" required autofocus />
+                        <x-input withicon id="name" class="block w-full" type="text" name="name"
+                            :value="old('name')" placeholder="{{ __('Username') }}" required autofocus />
                     </x-input-with-icon-wrapper>
                 </div>
 
@@ -39,16 +39,16 @@
                 <div class="flex items-center justify-between">
                     <label for="remember_me" class="inline-flex items-center">
                         <input id="remember_me" type="checkbox"
-                            class="text-purple-500 border-gray-300 rounded focus:border-purple-300 focus:ring focus:ring-purple-500 dark:border-gray-600 dark:bg-dark-eval-1 dark:focus:ring-offset-dark-eval-1"
+                            class="text-green-500 border-gray-300 rounded focus:border-green-300 focus:ring focus:ring-green-500 dark:border-gray-600 dark:bg-dark-eval-1 dark:focus:ring-offset-dark-eval-1"
                             name="remember">
                         <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
                     </label>
 
-                    @if (Route::has('password.request'))
+                    <!-- @if (Route::has('password.request'))
                     <a class="text-sm text-blue-500 hover:underline" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
-                    @endif
+                    @endif -->
                 </div>
 
                 <div>
@@ -58,14 +58,14 @@
                     </x-button>
                 </div>
 
-                @if (Route::has('register'))
+                <!-- @if (Route::has('register'))
                 <p class="text-sm text-gray-600 dark:text-gray-400">
                     {{ __('Don’t have an account?') }}
                     <a href="{{ route('register') }}" class="text-blue-500 hover:underline">
                         {{ __('Register') }}
                     </a>
                 </p>
-                @endif
+                @endif -->
             </div>
         </form>
     </x-auth-card>
