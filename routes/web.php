@@ -36,6 +36,9 @@ Route::get('/buttons/text-icon', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('master/product', \App\Http\Livewire\ShowProduct::class)->name('master.product');
+    Route::get('master/category', \App\Http\Livewire\ShowCategory::class)->name('master.category');
+    Route::get('master/supplier', \App\Http\Livewire\ShowSupplier::class)->name('master.supplier');
+    Route::get('master/customer', \App\Http\Livewire\ShowCustomer::class)->name('master.customer');
 });
 
 require __DIR__ . '/auth.php';

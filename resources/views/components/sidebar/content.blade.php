@@ -47,13 +47,14 @@
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
-
-        <x-sidebar.sublink title="Produsen" href="{{ route('master.product') }}"
-            :active="request()->routeIs('buttons.text')" />
-        <x-sidebar.sublink title="Kategori" href="{{ route('buttons.icon') }}"
-            :active="request()->routeIs('buttons.icon')" />
         <x-sidebar.sublink title="Produk" href="{{ route('master.product') }}"
             :active="request()->routeIs('master.product')" />
+        <x-sidebar.sublink title="Produsen" href="{{ route('master.supplier') }}"
+            :active="request()->routeIs('master.supplier')" />
+        <x-sidebar.sublink title="Kategori" href="{{ route('master.category') }}"
+            :active="request()->routeIs('master.category')" />       
+        <x-sidebar.sublink title="Konsumen" href="{{ route('master.customer') }}"
+            :active="request()->routeIs('master.customer')" />
     </x-sidebar.dropdown>
 
     

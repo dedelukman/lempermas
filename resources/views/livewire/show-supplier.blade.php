@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <h2 class="text-xl font-semibold leading-tight">
-                {{ __('Product') }}
+                {{ __('Produsen') }}
             </h2>
             
         </div>
@@ -40,27 +40,7 @@
                                 <x-heroicon-s-switch-vertical class="w-6 h-6" />Nama
                             </div>
                        </th>                        
-                        <th style="line-height: 30px; background-color: rgba(243, 244, 246, var(--tw-bg-opacity));" class=" text-gray-500"
-                        wire:click="sortBy('nameSupplier')"
-                        >
-                            <div class="flex justify-center">
-                                <x-heroicon-s-switch-vertical class="w-6 h-6" />Produsen
-                            </div>
-                        </th>
-                        <th style="line-height: 30px; background-color: rgba(243, 244, 246, var(--tw-bg-opacity));" class=" text-gray-500"
-                        wire:click="sortBy('nameCategory')"
-                        >
-                            <div class="flex justify-center">
-                                <x-heroicon-s-switch-vertical class="w-6 h-6" />Kategori
-                            </div>
-                        </th>
-                        <th style="line-height: 30px; background-color: rgba(243, 244, 246, var(--tw-bg-opacity));" class=" text-gray-500"
-                        wire:click="sortBy('price')"
-                        >
-                            <div class="flex justify-center">
-                                <x-heroicon-s-switch-vertical class="w-6 h-6" />Harga
-                            </div>
-                        </th>
+                        
                         <th style="line-height: 30px; background-color: rgba(243, 244, 246, var(--tw-bg-opacity));" class=" text-gray-500"
                         wire:click="sortBy('active')"
                         >
@@ -74,10 +54,7 @@
                 <tbody>
                     @forelse($entities as $entity )
                         <tr wire:loading.class.delay="opacity-50">
-                            <td class="px-6 text-sm text-gray-700">{{ $entity->name }}</td>                                                        
-                            <td class="px-6 text-sm text-gray-700">{{ $entity->nameSupplier}}</td>
-                            <td class="px-6 text-sm text-gray-700">{{ $entity->nameCategory}}</td>
-                            <td class="px-6 text-sm text-gray-700">Rp {{ number_format($entity->price , 0, ',', '.') }}</td>                                                                 
+                            <td class="px-6 text-sm text-gray-700">{{ $entity->name }}</td>                                                                                                                                                  
                             <td style="align-content: center" class="px-6 text-sm text-gray-700">
                             @if ($entity->active)                                                                                                                                     
                                 <x-button class="justify-center  gap-2" wire:click="changeActive({{ $entity->id}}, '0')">
@@ -154,86 +131,9 @@
                             >
                            @error('editing.name') <p class="error text-sm text-red-500 w-full">{{ $message }}</p> @enderror
                         </div>
-                        <div class="form-group">
-                            <label for="name">Produsen</label>
-                           
-                              <select class="form-control" name="city_id" wire:model.defer="editing.supplier_id">
-                                <option value="" selected>Pilih Produsen</option>
                         
-                                @foreach ($dropdown2 as $item)
-                                    <option value="{{ $item->id }}" >{{ $item->name }}</option>
-                                @endforeach
-                                                                
-                            </select>
-                            @error('editing.category_id') <p class="error text-sm text-red-500 w-full">{{ $message }}</p> @enderror                         
-                        </div>  
-                         <div class="form-group">
-                            <label for="name">Kategori</label>
                            
-                              <select class="form-control" name="city_id" wire:model.defer="editing.category_id">
-                                <option value="" selected>Pilih Kategori</option>
-                        
-                                @foreach ($dropdown as $item)
-                                    <option value="{{ $item->id }}" >{{ $item->name }}</option>
-                                @endforeach
-                                                                
-                            </select>
-                            @error('editing.category_id') <p class="error text-sm text-red-500 w-full">{{ $message }}</p> @enderror                         
-                        </div>  
-                         <div class="form-group">
-                            <label for="exampleInputEmail1">Harga Jual </label>
-                            <div class="input-group">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Rp</span>                            
-                                </div>
-                                <input type="number" class="form-control" aria-label="discount" min="0"  required
-                                wire:change="discount()"
-                                wire:model.defer="editing.price" >
-                                
-                                @error('editing.price') <p class="error text-sm text-red-500 w-full">{{ $message }}</p> @enderror
-                            </div>      
-                           
-                        </div>   
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Harga Diskon </label>
-                            <div class="input-group">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Rp</span>                            
-                                </div>
-                                <input type="number" class="form-control" aria-label="discount" min="0"  required
-                                wire:model.defer="editing.price_discount" wire:change="priceDiscount()"
-                                >
-                                
-                                @error('editing.price_discount') <p class="error text-sm text-red-500 w-full">{{ $message }}</p> @enderror
-                            </div>      
-                           
-                        </div>  
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Diskon </label>
-                            <div class="input-group">
-                                
-                                <input type="number" class="form-control" aria-label="discount" min="0"  required
-                                wire:change="discount()"
-                                wire:model.defer="editing.discount">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">%</span>                            
-                                </div>
-                                @error('editing.discount') <p class="error text-sm text-red-500 w-full">{{ $message }}</p> @enderror
-                            </div>      
-                           
-                        
-                            <div class="input-group">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Rp</span>                            
-                                </div>
-                                <input type="number" class="form-control" aria-label="discount" min="0"  required
-                                wire:change="discountValue()"
-                                wire:model.defer="editing.discount_value">
-                                
-                                @error('editing.discount_value') <p class="error text-sm text-red-500 w-full">{{ $message }}</p> @enderror
-                            </div>      
-                           
-                        </div>                                                 
+                                                                    
                        
                     </div>
                     <div class="modal-footer">
